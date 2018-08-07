@@ -273,6 +273,7 @@ MonoBehaviour:
   lookAheadFactor: 1.5
   lookAheadReturnSpeed: 0.5
   lookAheadMoveThreshold: 0.1
+  yPosRestriction: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
