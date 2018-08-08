@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 243335cbef8fd45288e7de5740fc9cf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxLives: 3
   playerPrefab: {fileID: 4090546215178880, guid: fd53f95aeae1643bd886e6873967c131,
     type: 2}
   spawnPoint: {fileID: 4686606174564288}
@@ -118,9 +119,9 @@ MonoBehaviour:
   spawnPrefab: {fileID: 4133579438412040, guid: e947ecdad548f4bc6a245f72a99ed0a1,
     type: 2}
   liveSprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300010, guid: 24601a6fe8ac34336a4e6975a9a36496, type: 3}
+  - {fileID: 21300008, guid: 24601a6fe8ac34336a4e6975a9a36496, type: 3}
+  - {fileID: 21300006, guid: 24601a6fe8ac34336a4e6975a9a36496, type: 3}
   blueUI: {fileID: 0}
   gameOverUI: {fileID: 0}
 --- !u!114 &114693377457263902

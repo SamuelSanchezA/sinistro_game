@@ -8,13 +8,13 @@ public class GameMaster : MonoBehaviour {
     public static GameMaster gameMaster;
 
 
-    //[SerializeField]
-    //private int maxLives = 3;
-    //private static int _remainingLives;
-    //public static int RemainingLives
-    //{
-    //    get { return _remainingLives; }
-    //}
+    [SerializeField]
+    private int maxLives = 3;
+    private static int _remainingLives;
+    public static int RemainingLives
+    {
+        get { return _remainingLives; }
+    }
 
     private void Awake()
     {
@@ -27,7 +27,7 @@ public class GameMaster : MonoBehaviour {
 
     void Start()
     {
-        //_remainingLives = maxLives;
+        _remainingLives = maxLives;
     }
 
     public Transform playerPrefab;
@@ -42,10 +42,10 @@ public class GameMaster : MonoBehaviour {
     [SerializeField]
     private GameObject gameOverUI;
 
-    //private void Update()
-    //{
-    //    blueUI.sprite = liveSprites[_remainingLives];
-    //}
+    private void Update()
+    {
+        blueUI.sprite = liveSprites[_remainingLives];
+    }
 
 
 
@@ -68,17 +68,16 @@ public class GameMaster : MonoBehaviour {
         Transform clone = Instantiate(player.deathParticles, player.transform.position, Quaternion.identity);
         Destroy(clone.gameObject, 5f);
         Destroy(player.gameObject);
-        //_remainingLives--;
-        //Debug.Log("Lives left: " + _remainingLives); 
-        //if (_remainingLives <= 0)
-        //{
-        //    gameOverUI.SetActive(true);
-        //}
-        //else
-        //{
-
-        gameMaster.StartCoroutine(gameMaster.RespawnPlayer());
-        //}
+        _remainingLives--;
+        Debug.Log("Lives left: " + _remainingLives); 
+        if (_remainingLives <= 0)
+        {
+            gameOverUI.SetActive(true);
+        }
+        else
+        {
+            gameMaster.StartCoroutine(gameMaster.RespawnPlayer());
+        }
 
     }
 
