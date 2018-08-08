@@ -16,7 +16,7 @@ public class Weapon : MonoBehaviour {
     // Handle camera shaking
     public float camShakeAmt = 0.05f;
     public float camShakeLength = 0.1f;
-    //CameraShake cameraShake;
+    CameraShake cameraShake;
                                 
 
     private float timeToFire = 0f;
@@ -39,11 +39,11 @@ public class Weapon : MonoBehaviour {
 
     private void Start()
     {
-        //cameraShake = GameMaster.gameMaster.GetComponent<CameraShake>();
-        //if(cameraShake == null)
-        //{
-        //    Debug.LogError("No cameraShake script found on GM object");
-        //}
+        cameraShake = GameMaster.gameMaster.GetComponent<CameraShake>();
+        if(cameraShake == null)
+        {
+            Debug.LogError("No cameraShake script found on GM object");
+        }
     }
 
     // Update is called once per frame
@@ -126,7 +126,7 @@ public class Weapon : MonoBehaviour {
             Destroy(hitParticle.gameObject, 1f);
         }
 
-        // Shake the camera
-        //cameraShake.Shake(camShakeAmt, camShakeLength);
+         // Shake the camera
+        cameraShake.Shake(camShakeAmt, camShakeLength);
     }
 }
