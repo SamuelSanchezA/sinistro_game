@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour {
     public EnemyStats stats = new EnemyStats();
 
     public Transform deathParticles;
+    public int fallBoundary = -20;
 
     [Header("Optional: ")]
     [SerializeField]
@@ -44,6 +45,14 @@ public class Enemy : MonoBehaviour {
         if(deathParticles == null)
         {
             Debug.LogError("No death particles on enemy");
+        }
+    }
+
+    private void Update()
+    {
+        if (transform.position.y <= fallBoundary)
+        {
+            DamageEnemy(999999);
         }
     }
 

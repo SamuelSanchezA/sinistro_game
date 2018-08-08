@@ -23,9 +23,14 @@ public class WaveSpawner : MonoBehaviour {
         get { return nextWave + 1; }
     }
 
+    public int Count
+    {
+        get { return waves[nextWave].count; }
+    }
+
     public Transform[] spawnPoints;
 
-    public float timeBetWaves = 5f;
+    public float timeBetWaves = 3f;
     private float waveCountdown;
 
     public float WaveCountdown

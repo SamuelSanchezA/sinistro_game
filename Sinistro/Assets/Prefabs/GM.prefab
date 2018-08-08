@@ -149,4 +149,6 @@ MonoBehaviour:
     rate: 1
   spawnPoints:
   - {fileID: 0}
-  timeBetWaves: 5
+  - {fileID: 0}
+  - {fileID: 0}
+  timeBetWaves: 4
