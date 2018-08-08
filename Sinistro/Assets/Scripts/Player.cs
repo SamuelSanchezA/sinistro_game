@@ -27,21 +27,21 @@ public class Player : MonoBehaviour {
     public int fallBoundary = -20;
     public Transform deathParticles;
 
-    //[SerializeField]
-    //private StatusIndicator statusIndicator;
+    [SerializeField]
+    private StatusIndicator statusIndicator;
 
     private void Start()
     {
         stats.Init();
 
-        //if(statusIndicator == null)
-        //{
-        //    Debug.LogError("No status indicator on player");
-        //}
-        //else
-        //{
-        //    statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
-        //}
+        if(statusIndicator == null)
+        {
+            Debug.LogError("No status indicator on player");
+        }
+        else
+        {
+            statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
+        }
     }
 
     private void Update()
@@ -54,11 +54,11 @@ public class Player : MonoBehaviour {
 
     public void DamagePlayer(int damage)
     {
-        //stats.curHealth -= damage;
-        //if(stats.curHealth <= 0)
-        //{
-        GameMaster.KillPlayer(this);
-        //}
-        //statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
+        stats.curHealth -= damage;
+        if(stats.curHealth <= 0)
+        {
+            GameMaster.KillPlayer(this);
+        }
+        statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
     }
 }

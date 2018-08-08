@@ -28,18 +28,18 @@ public class Enemy : MonoBehaviour {
 
     public Transform deathParticles;
 
-    //[Header("Optional: ")]
-    //[SerializeField]
-    //private StatusIndicator statusIndicator;
+    [Header("Optional: ")]
+    [SerializeField]
+    private StatusIndicator statusIndicator;
 
     private void Start()
     {
         stats.Init();
 
-        //if(statusIndicator != null)
-        //{
-        //    statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
-        //}
+        if(statusIndicator != null)
+        {
+            statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
+        }
 
         if(deathParticles == null)
         {
@@ -50,15 +50,15 @@ public class Enemy : MonoBehaviour {
     public void DamageEnemy(int damage)
     {
         stats.curHealth -= damage;
-        //if (stats.curHealth <= 0)
-        //{
+        if (stats.curHealth <= 0)
+        {
             GameMaster.KillEnemy(this);
-        //}
+        }
 
-        //if (statusIndicator != null)
-        //{
-        //    statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
-        //}
+        if (statusIndicator != null)
+        {
+            statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
