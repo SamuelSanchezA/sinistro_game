@@ -37,6 +37,7 @@ GameObject:
   - component: {fileID: 114464156366951860}
   - component: {fileID: 114558537104122892}
   - component: {fileID: 114138708285427308}
+  - component: {fileID: 114693377457263902}
   m_Layer: 0
   m_Name: GM
   m_TagString: GM
@@ -122,3 +123,30 @@ MonoBehaviour:
   - {fileID: 0}
   blueUI: {fileID: 0}
   gameOverUI: {fileID: 0}
+--- !u!114 &114693377457263902
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1401352940846992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc588fac283e64dc9b1fe1a68ac83c0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - name: W1
+    enemy: {fileID: 4080927720189648, guid: 6bf05072d4eff4ae29227390240c5340, type: 2}
+    count: 2
+    rate: 1
+  - name: W2
+    enemy: {fileID: 4080927720189648, guid: 6bf05072d4eff4ae29227390240c5340, type: 2}
+    count: 4
+    rate: 1
+  - name: W3
+    enemy: {fileID: 4080927720189648, guid: 6bf05072d4eff4ae29227390240c5340, type: 2}
+    count: 5
+    rate: 1
+  spawnPoints:
+  - {fileID: 0}
+  timeBetWaves: 5
