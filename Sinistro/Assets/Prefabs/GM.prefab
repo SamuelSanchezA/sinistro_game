@@ -136,15 +136,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - name: W1
-    enemy: {fileID: 4080927720189648, guid: 6bf05072d4eff4ae29227390240c5340, type: 2}
+    enemy: {fileID: 4101234199755226, guid: 6bf05072d4eff4ae29227390240c5340, type: 2}
     count: 2
     rate: 1
   - name: W2
-    enemy: {fileID: 4080927720189648, guid: 6bf05072d4eff4ae29227390240c5340, type: 2}
+    enemy: {fileID: 4101234199755226, guid: 6bf05072d4eff4ae29227390240c5340, type: 2}
     count: 4
     rate: 1
   - name: W3
-    enemy: {fileID: 4080927720189648, guid: 6bf05072d4eff4ae29227390240c5340, type: 2}
+    enemy: {fileID: 4101234199755226, guid: 6bf05072d4eff4ae29227390240c5340, type: 2}
     count: 5
     rate: 1
   spawnPoints:
