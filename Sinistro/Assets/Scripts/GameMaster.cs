@@ -65,8 +65,8 @@ public class GameMaster : MonoBehaviour {
 
     public void _KillPlayer(Player player)
     {
-        //Transform clone = Instantiate(player.deathParticles, player.transform.position, Quaternion.identity);
-        //Destroy(clone.gameObject, 5f);
+        Transform clone = Instantiate(player.deathParticles, player.transform.position, Quaternion.identity);
+        Destroy(clone.gameObject, 5f);
         Destroy(player.gameObject);
         //_remainingLives--;
         //Debug.Log("Lives left: " + _remainingLives); 
