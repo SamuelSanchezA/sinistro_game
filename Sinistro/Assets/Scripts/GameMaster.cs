@@ -56,7 +56,6 @@ public class GameMaster : MonoBehaviour {
         Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
         Transform clone = Instantiate(spawnPrefab, spawnPoint.position, spawnPoint.rotation) as Transform;
         Destroy(clone.gameObject, 3f);﻿
-        Debug.Log("Player is respawn");
     }
 
     public static void KillPlayer(Player player)
