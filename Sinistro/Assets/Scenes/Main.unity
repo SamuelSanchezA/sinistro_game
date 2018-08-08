@@ -181,10 +181,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1161437990008762, guid: fd53f95aeae1643bd886e6873967c131, type: 2}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fd53f95aeae1643bd886e6873967c131, type: 2}
   m_IsPrefabParent: 0
@@ -855,6 +851,7 @@ GameObject:
   - component: {fileID: 1959955069}
   - component: {fileID: 1959955068}
   - component: {fileID: 1959955073}
+  - component: {fileID: 1959955074}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
@@ -997,6 +994,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.4, y: 2.0666666}
   m_Direction: 0
+--- !u!114 &1959955074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1959955067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 312f86228c5a4494c94cf15da734da98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats:
+    maxHealth: 100
+    damage: 20
+  deathParticles: {fileID: 4232454498980740, guid: a4486bc08880d479f946fdccf73e6110,
+    type: 2}
 --- !u!1 &2095179844
 GameObject:
   m_ObjectHideFlags: 0

@@ -82,15 +82,15 @@ public class GameMaster : MonoBehaviour {
 
     }
 
-    //public static void KillEnemy(Enemy enemy)
-    //{
-    //    gameMaster._KillEnemy(enemy);
-    //}
+    public static void KillEnemy(Enemy enemy)
+    {
+        gameMaster._KillEnemy(enemy);
+    }
 
-    //public void _KillEnemy(Enemy enemy)
-    //{
-    //    Transform clone = Instantiate(enemy.deathParticles, enemy.transform.position, Quaternion.identity);
-    //    Destroy(clone.gameObject, 5f);
-    //    Destroy(enemy.gameObject);
-    //}
+    public void _KillEnemy(Enemy enemy)
+    {
+        Transform clone = Instantiate(enemy.deathParticles, enemy.transform.position, Quaternion.identity);
+        Destroy(clone.gameObject, 5f);
+        Destroy(enemy.gameObject);
+    }
 }

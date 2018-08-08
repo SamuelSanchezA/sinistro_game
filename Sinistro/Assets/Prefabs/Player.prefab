@@ -335,7 +335,7 @@ MonoBehaviour:
   Damage: 25
   whatToHit:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967035
   socket: {fileID: 4285370561178970}
   muzzleFlash: {fileID: 4533908383629576, guid: c86bae6614d8f46caa486cf927e926d7,
     type: 2}

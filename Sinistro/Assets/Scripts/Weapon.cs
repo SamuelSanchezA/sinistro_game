@@ -101,11 +101,11 @@ public class Weapon : MonoBehaviour {
 
         if(hit.collider != null)
         {
-            //Enemy enemy = hit.collider.GetComponent<Enemy>();
-            //if(enemy != null)
-            //{
-            //    enemy.DamageEnemy(Damage);
-            //}
+            Enemy enemy = hit.collider.GetComponent<Enemy>();
+            if(enemy != null)
+            {
+                enemy.DamageEnemy(Damage);
+            }
         }
     }
 
