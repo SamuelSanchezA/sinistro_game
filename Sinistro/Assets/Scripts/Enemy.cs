@@ -29,6 +29,8 @@ public class Enemy : MonoBehaviour {
     public Transform deathParticles;
     public int fallBoundary = -20;
 
+    public string deathSound = "Slime";
+
     [Header("Optional: ")]
     [SerializeField]
     private StatusIndicator statusIndicator;

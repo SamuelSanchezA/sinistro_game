@@ -73,3 +73,17 @@ MonoBehaviour:
     randomVolume: 0.1
     randomPitch: 0.1
     loop: 0
+  - name: DefaultShot
+    clip: {fileID: 8300000, guid: b3568cd78832649229477f3b176daca0, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+    loop: 0
+  - name: Slime
+    clip: {fileID: 8300000, guid: afd97e1d383e545fc8b48050289fae31, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+    loop: 0

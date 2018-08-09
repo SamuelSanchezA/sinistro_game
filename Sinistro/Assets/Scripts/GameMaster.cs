@@ -105,5 +105,7 @@ public class GameMaster : MonoBehaviour {
         Transform clone = Instantiate(enemy.deathParticles, enemy.transform.position, Quaternion.identity);
         Destroy(clone.gameObject, 5f);
         Destroy(enemy.gameObject);
+
+        audioManager.PlaySound(enemy.deathSound);
     }
 }

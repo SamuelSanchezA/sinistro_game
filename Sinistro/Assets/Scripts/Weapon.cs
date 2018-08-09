@@ -17,6 +17,8 @@ public class Weapon : MonoBehaviour {
     public float camShakeAmt = 0.05f;
     public float camShakeLength = 0.1f;
     CameraShake cameraShake;
+
+    public string weaponShootSound = "DefaultShot";
                                 
 
     private float timeToFire = 0f;
@@ -24,6 +26,9 @@ public class Weapon : MonoBehaviour {
 
     public float effectSpawnRate = 10f;
     Transform firePoint;
+
+    // Caching
+    AudioManager audioManager;
 
     public Vector2 velocity;
 
@@ -43,6 +48,12 @@ public class Weapon : MonoBehaviour {
         if(cameraShake == null)
         {
             Debug.LogError("No cameraShake script found on GM object");
+        }
+
+        audioManager = AudioManager.instance;
+        if(audioManager == null)
+        {
+            Debug.LogError("Panic!!! No audiomanager found");
         }
     }
 
@@ -111,14 +122,11 @@ public class Weapon : MonoBehaviour {
 
     void Effect(Vector3 hitPos, Vector3 hitNormal)
     {
-        //GameObject obj = Instantiate(bullet, (Vector2)socket.position, socket.localRotation);
         Transform clone = Instantiate(muzzleFlash, socket.position, socket.rotation) as Transform;
         clone.parent = socket;
         float size = Random.Range(0.6f, 0.9f);
         clone.localScale = new Vector3(size, size, size);
         Destroy(clone.gameObject, 0.04f);
-        //obj.GetComponent<Rigidbody2D>().velocity = new Vector2(velocity.x * transform.localScale.x, velocity.y);
-        //Destroy(obj, 0.07f); 
 
         if(hitNormal != new Vector3(9999, 9999, 9999))
         {
@@ -128,5 +136,8 @@ public class Weapon : MonoBehaviour {
 
          // Shake the camera
         cameraShake.Shake(camShakeAmt, camShakeLength);
+
+        // Play shoot sound
+        audioManager.PlaySound(weaponShootSound);
     }
 }
