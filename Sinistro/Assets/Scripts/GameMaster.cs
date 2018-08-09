@@ -22,18 +22,13 @@ public class GameMaster : MonoBehaviour {
         {
             gameMaster = this;
         }
-        //GetComponent<Audio    Source>().Play();
-    }
-
-    void Start()
-    {
-        _remainingLives = maxLives;
     }
 
     public Transform playerPrefab;
     public Transform spawnPoint;
     public float delay = 2;
     public Transform spawnPrefab;
+    public string mainSong;
 
     // Display lives left
     public Sprite[] liveSprites;
@@ -42,11 +37,30 @@ public class GameMaster : MonoBehaviour {
     [SerializeField]
     private GameObject gameOverUI;
 
+    // cache
+    private AudioManager audioManager;
+
+    void Start()
+    {
+        _remainingLives = maxLives;
+
+        // caching
+        audioManager = AudioManager.instance;
+        if (audioManager == null)
+        {
+            Debug.LogError("PANIC!!! No AudioManager found!!!");
+        }
+        else
+        {
+            audioManager.PlaySound(mainSong);
+            Debug.Log("Playing " + mainSong);
+        }
+    }
+
     private void Update()
     {
         blueUI.sprite = liveSprites[_remainingLives];
     }
-
 
 
 

@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 114558537104122892}
   - component: {fileID: 114138708285427308}
   - component: {fileID: 114693377457263902}
+  - component: {fileID: 114315113119528246}
   m_Layer: 0
   m_Name: GM
   m_TagString: GM
@@ -84,6 +85,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 0}
+--- !u!114 &114315113119528246
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1401352940846992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41aec1cc41e234370aa378b274d850dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Homenaje
+    clip: {fileID: 8300000, guid: 1384b62045a9445b99caf49106711c91, type: 3}
+    volume: 1
+    pitch: 0
+    randomVolume: 0
+    randomPitch: 0
 --- !u!114 &114464156366951860
 MonoBehaviour:
   m_ObjectHideFlags: 1
