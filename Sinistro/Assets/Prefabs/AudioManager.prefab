@@ -87,3 +87,10 @@ MonoBehaviour:
     randomVolume: 0.1
     randomPitch: 0.1
     loop: 0
+  - name: Grunt
+    clip: {fileID: 8300000, guid: 9526c68140dfa4f26be710ae45ffe3b5, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+    loop: 0

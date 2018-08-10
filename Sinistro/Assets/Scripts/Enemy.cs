@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour {
     public int fallBoundary = -20;
 
     public string deathSound = "Slime";
+    public string grunt = "Grunt";
 
     [Header("Optional: ")]
     [SerializeField]

@@ -107,5 +107,6 @@ public class GameMaster : MonoBehaviour {
         Destroy(enemy.gameObject);
 
         audioManager.PlaySound(enemy.deathSound);
+        audioManager.PlaySound(enemy.grunt);
     }
 }
