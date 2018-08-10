@@ -54,8 +54,8 @@ MonoBehaviour:
   sounds:
   - name: Homenaje
     clip: {fileID: 8300000, guid: 1384b62045a9445b99caf49106711c91, type: 3}
-    volume: 0
-    pitch: 0.5
+    volume: 0.5
+    pitch: 1
     randomVolume: 0
     randomPitch: 0
     loop: 1
