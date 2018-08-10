@@ -120,10 +120,12 @@ MonoBehaviour:
     type: 2}
   mainSong: Homenaje
   spawn: Spawn
+  gameOverSound: GameOver
   liveSprites:
   - {fileID: 21300010, guid: 24601a6fe8ac34336a4e6975a9a36496, type: 3}
   - {fileID: 21300008, guid: 24601a6fe8ac34336a4e6975a9a36496, type: 3}
   - {fileID: 21300006, guid: 24601a6fe8ac34336a4e6975a9a36496, type: 3}
+  - {fileID: 21300004, guid: 24601a6fe8ac34336a4e6975a9a36496, type: 3}
   blueUI: {fileID: 0}
   gameOverUI: {fileID: 0}
 --- !u!114 &114693377457263902
