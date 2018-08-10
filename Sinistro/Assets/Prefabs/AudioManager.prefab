@@ -115,3 +115,17 @@ MonoBehaviour:
     randomVolume: 0.1
     randomPitch: 0.1
     loop: 0
+  - name: GameOver
+    clip: {fileID: 8300000, guid: c94ef2c1d235a4a80825fb2b720e0656, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+    loop: 0
+  - name: LandingFootsteps
+    clip: {fileID: 8300000, guid: 8aa21f79a49ce49fead694a2fdd33c88, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+    loop: 0

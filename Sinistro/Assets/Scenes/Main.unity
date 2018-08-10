@@ -697,6 +697,7 @@ GameObject:
   - component: {fileID: 849573336}
   - component: {fileID: 849573335}
   - component: {fileID: 849573334}
+  - component: {fileID: 849573337}
   m_Layer: 5
   m_Name: RetryButton
   m_TagString: Untagged
@@ -808,6 +809,36 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 849573332}
+--- !u!114 &849573337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 849573332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1818357038}
+          m_MethodName: OnMouseOver
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &899964374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,6 +1735,7 @@ GameObject:
   - component: {fileID: 1477888027}
   - component: {fileID: 1477888026}
   - component: {fileID: 1477888025}
+  - component: {fileID: 1477888028}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -1815,6 +1847,36 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1477888023}
+--- !u!114 &1477888028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1477888023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1818357038}
+          m_MethodName: OnMouseOver
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1483960477
 GameObject:
   m_ObjectHideFlags: 0
@@ -2377,6 +2439,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89a9c8ea8156d4cf3a9e2127627e93a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseOverSound: ButtonHover
+  buttonPressSound: ButtonClick
 --- !u!95 &1818357039
 Animator:
   serializedVersion: 3

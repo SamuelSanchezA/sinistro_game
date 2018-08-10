@@ -31,6 +31,8 @@ public class GameMaster : MonoBehaviour {
     public string mainSong;
     public string spawn;
 
+    public string gameOverSound = "GameOver";
+
     // Display lives left
     public Sprite[] liveSprites;
     public Image blueUI;
@@ -63,7 +65,12 @@ public class GameMaster : MonoBehaviour {
         blueUI.sprite = liveSprites[_remainingLives];
     }
 
+    public void EndGame()
+    {
+        audioManager.PlaySound(gameOverSound);
 
+        gameOverUI.SetActive(true);
+    }
 
     public IEnumerator RespawnPlayer()
     {
@@ -89,7 +96,7 @@ public class GameMaster : MonoBehaviour {
         Debug.Log("Lives left: " + _remainingLives); 
         if (_remainingLives <= 0)
         {
-            gameOverUI.SetActive(true);
+            gameMaster.EndGame();
         }
         else
         {

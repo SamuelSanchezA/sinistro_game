@@ -68,7 +68,9 @@ public class Player : MonoBehaviour {
     public void DamagePlayer(int damage)
     {
         stats.curHealth -= damage;
-        audioManager.PlaySound(playerHit);
+        if(stats.curHealth > 0)
+            audioManager.PlaySound(playerHit);
+        
         if(stats.curHealth <= 0)
         {
             GameMaster.KillPlayer(this);
