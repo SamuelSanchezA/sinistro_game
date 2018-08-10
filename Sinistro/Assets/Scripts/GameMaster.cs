@@ -93,7 +93,7 @@ public class GameMaster : MonoBehaviour {
         Destroy(player.gameObject);
         audioManager.PlaySound(player.grunt);
         _remainingLives--;
-        Debug.Log("Lives left: " + _remainingLives); 
+        Debug.Log("Lives left: " + _remainingLives);
         if (_remainingLives <= 0)
         {
             gameMaster.EndGame();
