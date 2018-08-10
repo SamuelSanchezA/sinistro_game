@@ -346,6 +346,7 @@ MonoBehaviour:
   hitPrefab: {fileID: 4532639071568648, guid: dea3b44de7f134d429a666b22ca61682, type: 2}
   camShakeAmt: 0.05
   camShakeLength: 0.1
+  weaponShootSound: DefaultShot
   effectSpawnRate: 10
   velocity: {x: 0, y: 0}
 --- !u!114 &114326753695566258
@@ -398,6 +399,8 @@ MonoBehaviour:
   fallBoundary: -20
   deathParticles: {fileID: 4232454498980740, guid: df7d3e6a312a34dc4877b70544d6b3cd,
     type: 2}
+  grunt: Grunt1
+  playerHit: PlayerHit
   statusIndicator: {fileID: 114414658810759292}
 --- !u!114 &114929733111107660
 MonoBehaviour:

@@ -2083,13 +2083,7 @@ Prefab:
       propertyPath: spawnPoints.Array.data[2]
       value: 
       objectReference: {fileID: 96758174}
-    - target: {fileID: 114315113119528246, guid: f78e79c89be0f4649ad992fb613deee2,
-        type: 2}
-      propertyPath: sounds.Array.data[0].pitch
-      value: 0.99
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114315113119528246, guid: f78e79c89be0f4649ad992fb613deee2, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f78e79c89be0f4649ad992fb613deee2, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1656163903

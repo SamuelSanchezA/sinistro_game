@@ -27,6 +27,12 @@ public class Player : MonoBehaviour {
     public int fallBoundary = -20;
     public Transform deathParticles;
 
+    // cache
+    private AudioManager audioManager;
+
+    public string grunt = "Grunt1";
+    public string playerHit = "PlayerHit";
+
     [SerializeField]
     private StatusIndicator statusIndicator;
 
@@ -42,6 +48,13 @@ public class Player : MonoBehaviour {
         {
             statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
         }
+
+        // caching
+        audioManager = AudioManager.instance;
+        if (audioManager == null)
+        {
+            Debug.LogError("PANIC!!! No AudioManager found!!!");
+        }
     }
 
     private void Update()
@@ -55,6 +68,7 @@ public class Player : MonoBehaviour {
     public void DamagePlayer(int damage)
     {
         stats.curHealth -= damage;
+        audioManager.PlaySound(playerHit);
         if(stats.curHealth <= 0)
         {
             GameMaster.KillPlayer(this);

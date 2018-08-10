@@ -54,8 +54,8 @@ MonoBehaviour:
   sounds:
   - name: Homenaje
     clip: {fileID: 8300000, guid: 1384b62045a9445b99caf49106711c91, type: 3}
-    volume: 1
-    pitch: 0.99
+    volume: 0
+    pitch: 0.5
     randomVolume: 0
     randomPitch: 0
     loop: 1
@@ -89,6 +89,27 @@ MonoBehaviour:
     loop: 0
   - name: Grunt
     clip: {fileID: 8300000, guid: 9526c68140dfa4f26be710ae45ffe3b5, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+    loop: 0
+  - name: Spawn
+    clip: {fileID: 8300000, guid: 72fc8407b399546bfaedddcf431cf549, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+    loop: 0
+  - name: Grunt1
+    clip: {fileID: 8300000, guid: 4861070cf8b90490e9371dfd9114f02a, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+    loop: 0
+  - name: PlayerHit
+    clip: {fileID: 8300000, guid: 69e7c30546c314ecdb4fad93b51661ff, type: 3}
     volume: 0.7
     pitch: 1
     randomVolume: 0.1

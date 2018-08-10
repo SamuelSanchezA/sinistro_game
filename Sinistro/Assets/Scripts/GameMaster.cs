@@ -29,6 +29,7 @@ public class GameMaster : MonoBehaviour {
     public float delay = 2;
     public Transform spawnPrefab;
     public string mainSong;
+    public string spawn;
 
     // Display lives left
     public Sprite[] liveSprites;
@@ -67,6 +68,7 @@ public class GameMaster : MonoBehaviour {
     public IEnumerator RespawnPlayer()
     {
         yield return new WaitForSeconds(delay);
+        audioManager.PlaySound(spawn);
         Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
         Transform clone = Instantiate(spawnPrefab, spawnPoint.position, spawnPoint.rotation) as Transform;
         Destroy(clone.gameObject, 3f);﻿
@@ -82,6 +84,7 @@ public class GameMaster : MonoBehaviour {
         Transform clone = Instantiate(player.deathParticles, player.transform.position, Quaternion.identity);
         Destroy(clone.gameObject, 5f);
         Destroy(player.gameObject);
+        audioManager.PlaySound(player.grunt);
         _remainingLives--;
         Debug.Log("Lives left: " + _remainingLives); 
         if (_remainingLives <= 0)
