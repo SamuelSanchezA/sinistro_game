@@ -18,12 +18,15 @@ public class MenuManager : MonoBehaviour {
         {
             Debug.LogError("No audiomanager found");
         }
+        audioManager.PlaySound("Homenaje");
     }
 
     public void StartGame()
     {
         audioManager.PlaySound(pressButtonSound);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //audioManager.StopSound("Homenaje");
+        audioManager.PlaySound("BlueLevelMusic");
     }
 
     public void QuitGame()

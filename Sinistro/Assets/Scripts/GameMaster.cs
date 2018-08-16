@@ -16,6 +16,10 @@ public class GameMaster : MonoBehaviour {
         get { return _remainingLives; }
     }
 
+    [SerializeField]
+    private int startingMoney;
+    public static int Money;
+
     private void Awake()
     {
         if(gameMaster == null)
@@ -40,12 +44,23 @@ public class GameMaster : MonoBehaviour {
     [SerializeField]
     private GameObject gameOverUI;
 
+    [SerializeField]
+    private GameObject upgradeMenu;
+
+    [SerializeField]
+    private WaveSpawner waveSpawner;
+
+    public delegate void UpgradeMenuCallback(bool active);
+    public UpgradeMenuCallback onToggleUpgradeMenu;
+
     // cache
     private AudioManager audioManager;
 
     void Start()
     {
         _remainingLives = maxLives;
+
+        Money = startingMoney;
 
         // caching
         audioManager = AudioManager.instance;
@@ -58,11 +73,25 @@ public class GameMaster : MonoBehaviour {
             audioManager.PlaySound(mainSong);
             Debug.Log("Playing " + mainSong);
         }
+
+        audioManager.StopSound("Homenaje");
+
     }
 
     private void Update()
     {
         blueUI.sprite = liveSprites[_remainingLives];
+        if(Input.GetKeyDown(KeyCode.U))
+        {
+            ToggleUpgradeMenu();
+        }
+    }
+
+    private void ToggleUpgradeMenu()
+    {
+        upgradeMenu.SetActive(!upgradeMenu.activeSelf);
+        waveSpawner.enabled = !upgradeMenu.activeSelf;
+        onToggleUpgradeMenu.Invoke(upgradeMenu.activeSelf);
     }
 
     public void EndGame()
@@ -118,5 +147,8 @@ public class GameMaster : MonoBehaviour {
 
         audioManager.PlaySound(enemy.deathSound);
         audioManager.PlaySound(enemy.grunt);
+
+        Money += enemy.moneyDrop;
+        audioManager.PlaySound("GetItMoney");
     }
 }

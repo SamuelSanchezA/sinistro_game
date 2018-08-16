@@ -7,7 +7,6 @@ namespace UnitySampleAssets._2D
     {
         private bool facingRight = true; // For determining which way the player is currently facing.
 
-        [SerializeField] private float maxSpeed = 10f; // The fastest the player can travel in the x axis.
         [SerializeField] private float jumpForce = 400f; // Amount of force added when the player jumps.    
 
         [Range(0, 1)] [SerializeField] private float crouchSpeed = .36f;
@@ -106,7 +105,7 @@ namespace UnitySampleAssets._2D
                 anim.SetFloat("Speed", Mathf.Abs(move));
 
                 // Move the character
-                GetComponent<Rigidbody2D>().velocity = new Vector2(move * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(move * PlayerStats.instance.movementSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
                 // If the input is moving the player right and the player is facing left...
                 if (move > 0 && !facingRight)
