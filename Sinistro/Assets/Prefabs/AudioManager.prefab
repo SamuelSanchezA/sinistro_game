@@ -156,4 +156,4 @@ MonoBehaviour:
     pitch: 1
     randomVolume: 0
     randomPitch: 0
-    loop: 0
+    loop: 1
