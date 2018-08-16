@@ -157,3 +157,10 @@ MonoBehaviour:
     randomVolume: 0
     randomPitch: 0
     loop: 1
+  - name: DrumTransition
+    clip: {fileID: 8300000, guid: fcc57ea0423cd46f0b2b1a2f789da5bb, type: 3}
+    volume: 0.4
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+    loop: 0

@@ -11,6 +11,9 @@ public class MenuManager : MonoBehaviour {
 
     AudioManager audioManager;
 
+    public Animator animator;
+    private int levelToLoad;
+
     private void Start()
     {
         audioManager = AudioManager.instance;
@@ -23,10 +26,10 @@ public class MenuManager : MonoBehaviour {
 
     public void StartGame()
     {
+        FadeToLevel1(1);
+
         audioManager.PlaySound(pressButtonSound);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        //audioManager.StopSound("Homenaje");
-        audioManager.PlaySound("BlueLevelMusic");
+
     }
 
     public void QuitGame()
@@ -39,6 +42,20 @@ public class MenuManager : MonoBehaviour {
     public void OnMouseOver()
     {
         audioManager.PlaySound(hoverOverSound);
+    }
+
+    public void FadeToLevel1(int levelIndex)
+    {
+        levelToLoad = levelIndex;
+        animator.SetTrigger("FadeOut");
+        audioManager.StopSound("Homenaje");
+        audioManager.PlaySound("DrumTransition");
+    }
+
+    public void OnFadeComplete()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        audioManager.PlaySound("BlueLevelMusic");   
     }
 
 }
