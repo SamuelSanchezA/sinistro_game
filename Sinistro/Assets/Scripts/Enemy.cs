@@ -34,6 +34,8 @@ public class Enemy : MonoBehaviour {
     public string deathSound = "Slime";
     public string grunt = "Grunt";
 
+    public int moneyDrop = 10;
+
     [Header("Optional: ")]
     [SerializeField]
     private StatusIndicator statusIndicator;

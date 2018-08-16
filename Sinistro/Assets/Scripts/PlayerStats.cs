@@ -15,6 +15,8 @@ public class PlayerStats : MonoBehaviour {
 
     public float healthRegenRate = 2f;
 
+    public float movementSpeed = 10f;
+
     public void Awake()
     {
         if(instance == null)

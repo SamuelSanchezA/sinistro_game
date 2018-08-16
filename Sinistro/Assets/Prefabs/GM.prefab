@@ -96,6 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44f85bd252d2942bc9e9a4a5f34fd037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthRegenRate: 2
+  movementSpeed: 10
 --- !u!114 &114464156366951860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,6 +145,7 @@ MonoBehaviour:
   blueUI: {fileID: 0}
   gameOverUI: {fileID: 0}
   upgradeMenu: {fileID: 0}
+  waveSpawner: {fileID: 114693377457263902}
 --- !u!114 &114693377457263902
 MonoBehaviour:
   m_ObjectHideFlags: 1
