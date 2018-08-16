@@ -74,6 +74,8 @@ public class GameMaster : MonoBehaviour {
             Debug.Log("Playing " + mainSong);
         }
 
+        audioManager.StopSound("Homenaje");
+
     }
 
     private void Update()
@@ -147,6 +149,6 @@ public class GameMaster : MonoBehaviour {
         audioManager.PlaySound(enemy.grunt);
 
         Money += enemy.moneyDrop;
-        audioManager.PlaySound("Money");
+        audioManager.PlaySound("GetItMoney");
     }
 }

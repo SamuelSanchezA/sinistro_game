@@ -133,13 +133,27 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 806203fbe46344df9847890548539a58, type: 3}
     volume: 0.7
     pitch: 1
-    randomVolume: 0.1
-    randomPitch: 0.1
+    randomVolume: 0.16
+    randomPitch: 0.16
     loop: 0
   - name: Money
     clip: {fileID: 8300000, guid: ba87afd059cae44b387fcabaad7a3a0c, type: 3}
     volume: 0.7
     pitch: 1
-    randomVolume: 0.1
-    randomPitch: 0.1
+    randomVolume: 0.178
+    randomPitch: 0.134
+    loop: 0
+  - name: GetItMoney
+    clip: {fileID: 8300000, guid: c50aa6672d99241f1879c77610216e34, type: 3}
+    volume: 0.4
+    pitch: 0.82
+    randomVolume: 0
+    randomPitch: 0.117
+    loop: 0
+  - name: BlueLevelMusic
+    clip: {fileID: 8300000, guid: 2cc6c99cbcab247d1a5c890a410d1466, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
     loop: 0

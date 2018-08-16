@@ -72,16 +72,7 @@ public class AudioManager : MonoBehaviour {
             obj.transform.SetParent(this.transform);
             sounds[i].SetSource(obj.AddComponent<AudioSource>());
         }
-        PlaySound("Homenaje");
     }
-
-    //private void Update()
-    //{
-    //    if(Time.time > 5f)
-    //    {
-    //        StopSound("Homenaje");
-    //    }
-    //}
 
     public void PlaySound(string _name)
     {
