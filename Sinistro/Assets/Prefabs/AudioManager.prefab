@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Homenaje
-    clip: {fileID: 8300000, guid: 7283215d6efbc46be9503f727379fcfd, type: 3}
+    clip: {fileID: 8300000, guid: 3dc8ee306553a469789395bec035e128, type: 3}
     volume: 0.5
     pitch: 1
     randomVolume: 0
@@ -91,8 +91,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 9526c68140dfa4f26be710ae45ffe3b5, type: 3}
     volume: 0.7
     pitch: 1
-    randomVolume: 0.1
-    randomPitch: 0.1
+    randomVolume: 0.108
+    randomPitch: 0.117
     loop: 0
   - name: Spawn
     clip: {fileID: 8300000, guid: 72fc8407b399546bfaedddcf431cf549, type: 3}
@@ -145,13 +145,13 @@ MonoBehaviour:
     loop: 0
   - name: GetItMoney
     clip: {fileID: 8300000, guid: c50aa6672d99241f1879c77610216e34, type: 3}
-    volume: 0.4
+    volume: 0.35
     pitch: 0.82
-    randomVolume: 0
-    randomPitch: 0.117
+    randomVolume: 0.058
+    randomPitch: 0.134
     loop: 0
   - name: BlueLevelMusic
-    clip: {fileID: 8300000, guid: 2cc6c99cbcab247d1a5c890a410d1466, type: 3}
+    clip: {fileID: 8300000, guid: 4d2ebbbb3c1d34deba189048be375279, type: 3}
     volume: 0.7
     pitch: 1
     randomVolume: 0
