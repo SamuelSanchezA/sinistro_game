@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLives: 3
+  startingMoney: 69
   playerPrefab: {fileID: 4266461219259496, guid: fd53f95aeae1643bd886e6873967c131,
     type: 2}
   spawnPoint: {fileID: 4686606174564288}
@@ -128,6 +129,7 @@ MonoBehaviour:
   - {fileID: 21300004, guid: 24601a6fe8ac34336a4e6975a9a36496, type: 3}
   blueUI: {fileID: 0}
   gameOverUI: {fileID: 0}
+  upgradeMenu: {fileID: 0}
 --- !u!114 &114693377457263902
 MonoBehaviour:
   m_ObjectHideFlags: 1

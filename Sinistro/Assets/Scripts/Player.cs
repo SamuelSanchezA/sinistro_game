@@ -1,7 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnitySampleAssets._2D;
 
+
+[RequireComponent(typeof(Platformer2DUserControl))]
+[RequireComponent(typeof(Weapon))]
 public class Player : MonoBehaviour {
 
     [System.Serializable]
@@ -55,6 +59,8 @@ public class Player : MonoBehaviour {
         {
             Debug.LogError("PANIC!!! No AudioManager found!!!");
         }
+
+        GameMaster.gameMaster.onToggleUpgradeMenu += OnUpgradeMenuToggle;
     }
 
     private void Update()
@@ -63,6 +69,13 @@ public class Player : MonoBehaviour {
         {
             DamagePlayer(999999);
         }
+    }
+
+    private void OnUpgradeMenuToggle(bool active)
+    {
+        GetComponent<Platformer2DUserControl>().enabled = !active;
+        GetComponent<Weapon>().enabled = !active;
+
     }
 
     public void DamagePlayer(int damage)
@@ -76,5 +89,10 @@ public class Player : MonoBehaviour {
             GameMaster.KillPlayer(this);
         }
         statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
+    }
+
+    private void OnDestroy()
+    {
+        GameMaster.gameMaster.onToggleUpgradeMenu -= OnUpgradeMenuToggle;
     }
 }
