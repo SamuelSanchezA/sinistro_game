@@ -28,6 +28,7 @@ public class GameOverUI : MonoBehaviour {
 
         Debug.Log("Application Quit!");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        audioManager.StopSound("BlueLevelMusic");
     }
 
     public void Retry()
