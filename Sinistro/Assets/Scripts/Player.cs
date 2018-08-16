@@ -8,26 +8,6 @@ using UnitySampleAssets._2D;
 [RequireComponent(typeof(Weapon))]
 public class Player : MonoBehaviour {
 
-    [System.Serializable]
-    public class PlayerStats 
-    {
-        public int maxHealth = 100;
-
-        private int _curHealth;
-        public int curHealth
-        {
-            get { return _curHealth; }
-            set { _curHealth = Mathf.Clamp(value, 0, maxHealth); }
-        }
-
-        public void Init()
-        {
-            curHealth = maxHealth;
-        }
-
-    }
-
-    public PlayerStats stats = new PlayerStats();
     public int fallBoundary = -20;
     public Transform deathParticles;
 
@@ -40,9 +20,13 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private StatusIndicator statusIndicator;
 
+    private PlayerStats stats;
+
     private void Start()
     {
-        stats.Init();
+        stats = PlayerStats.instance;
+
+        stats.curHealth = stats.maxHealth;
 
         if(statusIndicator == null)
         {
@@ -61,6 +45,14 @@ public class Player : MonoBehaviour {
         }
 
         GameMaster.gameMaster.onToggleUpgradeMenu += OnUpgradeMenuToggle;
+
+        InvokeRepeating("RegenHealth", 1f/stats.healthRegenRate, 1f/stats.healthRegenRate);
+    }
+
+    void RegenHealth()
+    {
+        stats.curHealth += 1;
+        statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
     }
 
     private void Update()
