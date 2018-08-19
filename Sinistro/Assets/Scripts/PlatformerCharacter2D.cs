@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 namespace UnitySampleAssets._2D
 {
@@ -26,7 +27,7 @@ namespace UnitySampleAssets._2D
         private bool grounded = false; // Whether or not the player is grounded.
         private Transform ceilingCheck; // A position marking where to check for ceilings
         private float ceilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
-        private Animator anim; // Reference to the player's animator component.
+        public Animator anim; // Reference to the player's animator component.
 
         private Transform playerGraphics;
 
@@ -82,8 +83,6 @@ namespace UnitySampleAssets._2D
 
         public void Move(float move, bool crouch, bool jump)
         {
-
-
             // If crouching, check to see if the character can stand up
             if (!crouch && anim.GetBool("Crouch"))
             {

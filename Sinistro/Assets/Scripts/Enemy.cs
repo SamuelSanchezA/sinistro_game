@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 [RequireComponent(typeof(EnemyAI))]
 public class Enemy : MonoBehaviour {
@@ -35,6 +32,8 @@ public class Enemy : MonoBehaviour {
     public string grunt = "Grunt";
 
     public int moneyDrop = 10;
+
+    private Animator animator;
 
     [Header("Optional: ")]
     [SerializeField]
@@ -83,6 +82,7 @@ public class Enemy : MonoBehaviour {
             statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
         }
     }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

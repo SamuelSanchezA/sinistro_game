@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 namespace UnitySampleAssets._2D
 {
@@ -30,5 +31,26 @@ namespace UnitySampleAssets._2D
             character.Move(h, crouch, jump);
             jump = false;
         }
+
+        public void Blink(float hurtTime)
+        {
+            StartCoroutine(HurtBlinker(hurtTime));
+        }
+
+        IEnumerator HurtBlinker(float hurtTime)
+        {
+            int enemyLayer = LayerMask.NameToLayer("Enemy");
+            int playerLayer = LayerMask.NameToLayer("Player");
+
+            Physics2D.IgnoreLayerCollision(enemyLayer, playerLayer);
+
+            GetComponent<PlatformerCharacter2D>().anim.SetLayerWeight(1, 1);
+
+            yield return new WaitForSeconds(hurtTime);
+
+            Physics2D.IgnoreLayerCollision(enemyLayer, playerLayer, false);
+            GetComponent<PlatformerCharacter2D>().anim.SetLayerWeight(1, 0);
+        }
+
     }
 }

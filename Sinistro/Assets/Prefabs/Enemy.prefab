@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224640652690637678}
   - component: {fileID: 222376301439532750}
   - component: {fileID: 114623299528595544}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114759636032603656}
   - component: {fileID: 114153490087199852}
   - component: {fileID: 114646072276549146}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: StatusIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 70095697439204166}
   - component: {fileID: 114069162818063970}
   - component: {fileID: 95073498958171792}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4718267447087128}
   - component: {fileID: 212536133562817154}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,6 +182,9 @@ MonoBehaviour:
   deathParticles: {fileID: 4232454498980740, guid: a4486bc08880d479f946fdccf73e6110,
     type: 2}
   fallBoundary: -20
+  deathSound: Slime
+  grunt: Grunt
+  moneyDrop: 10
   statusIndicator: {fileID: 114646072276549146}
 --- !u!114 &114153490087199852
 MonoBehaviour:

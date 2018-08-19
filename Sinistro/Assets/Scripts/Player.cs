@@ -20,7 +20,7 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private StatusIndicator statusIndicator;
 
-    private PlayerStats stats;
+    public PlayerStats stats;
 
     private void Start()
     {
@@ -67,7 +67,6 @@ public class Player : MonoBehaviour {
     {
         GetComponent<Platformer2DUserControl>().enabled = !active;
         GetComponent<Weapon>().enabled = !active;
-
     }
 
     public void DamagePlayer(int damage)
@@ -81,6 +80,7 @@ public class Player : MonoBehaviour {
             GameMaster.KillPlayer(this);
         }
         statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
+        GetComponent<Platformer2DUserControl>().Blink(2);
     }
 
     private void OnDestroy()
