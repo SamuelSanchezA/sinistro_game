@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  invincibleTime: 2
   healthRegenRate: 2
   movementSpeed: 10
 --- !u!114 &114464156366951860
@@ -128,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLives: 3
   startingMoney: 69
-  playerPrefab: {fileID: 4266461219259496, guid: fd53f95aeae1643bd886e6873967c131,
+  playerPrefab: {fileID: 4192169637342082, guid: fd53f95aeae1643bd886e6873967c131,
     type: 2}
   spawnPoint: {fileID: 4686606174564288}
   delay: 2

@@ -6,6 +6,8 @@ public class PlayerStats : MonoBehaviour {
 
     public int maxHealth = 100;
 
+    public float invincibleTime = 2f;
+
     private int _curHealth;
     public int curHealth
     {
@@ -24,5 +26,4 @@ public class PlayerStats : MonoBehaviour {
             instance = this;
         }
     }
-
 }

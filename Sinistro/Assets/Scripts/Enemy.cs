@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 [RequireComponent(typeof(EnemyAI))]
@@ -35,6 +33,8 @@ public class Enemy : MonoBehaviour {
     public string grunt = "Grunt";
 
     public int moneyDrop = 10;
+
+    private Animator animator;
 
     [Header("Optional: ")]
     [SerializeField]
@@ -90,6 +90,7 @@ public class Enemy : MonoBehaviour {
         if(player != null)
         {
             player.DamagePlayer(stats.damage);
+            player.DamagePlayerAnimation();
         }
     }
 

@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -59,6 +58,8 @@ public class GameMaster : MonoBehaviour {
     void Start()
     {
         _remainingLives = maxLives;
+
+        Debug.Log("Start again with lives: " + _remainingLives);
 
         Money = startingMoney;
 
@@ -123,7 +124,7 @@ public class GameMaster : MonoBehaviour {
         audioManager.PlaySound(player.grunt);
         _remainingLives--;
         Debug.Log("Lives left: " + _remainingLives);
-        if (_remainingLives <= 0)
+        if (_remainingLives == 0)
         {
             gameMaster.EndGame();
         }

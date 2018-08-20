@@ -592,7 +592,7 @@ namespace Pathfinding {
 
 			var text = new System.Text.StringBuilder();
 
-			DebugStringPrefix(logMode, text);
+			//DebugStringPrefix(logMode, text);
 
 			if (!error && logMode == PathLog.Heavy) {
 				if (hasEndPoint && endNode != null) {

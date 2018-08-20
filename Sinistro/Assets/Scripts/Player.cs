@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnitySampleAssets._2D;
 
 
 [RequireComponent(typeof(Platformer2DUserControl))]
 [RequireComponent(typeof(Weapon))]
 public class Player : MonoBehaviour {
-
+    
     public int fallBoundary = -20;
     public Transform deathParticles;
 
@@ -20,10 +18,12 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private StatusIndicator statusIndicator;
 
-    private PlayerStats stats;
+    [HideInInspector]
+    public PlayerStats stats;
 
     private void Start()
     {
+
         stats = PlayerStats.instance;
 
         stats.curHealth = stats.maxHealth;
@@ -73,6 +73,7 @@ public class Player : MonoBehaviour {
     public void DamagePlayer(int damage)
     {
         stats.curHealth -= damage;
+        Debug.Log("Player health: " + stats.curHealth);
         if(stats.curHealth > 0)
             audioManager.PlaySound(playerHit);
         
@@ -81,10 +82,16 @@ public class Player : MonoBehaviour {
             GameMaster.KillPlayer(this);
         }
         statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
+
     }
 
     private void OnDestroy()
     {
         GameMaster.gameMaster.onToggleUpgradeMenu -= OnUpgradeMenuToggle;
+    }
+
+    public void DamagePlayerAnimation()
+    {
+        GetComponent<Platformer2DUserControl>().Blink(stats.invincibleTime);
     }
 }
