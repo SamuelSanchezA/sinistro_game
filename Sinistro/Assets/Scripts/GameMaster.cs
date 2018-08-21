@@ -30,10 +30,12 @@ public class GameMaster : MonoBehaviour {
 
     public Transform playerPrefab;
     public Transform spawnPoint;
-    public float delay = 2;
+    public float delay = 2f;
     public Transform spawnPrefab;
     public string mainSong;
     public string spawn;
+
+    private bool canSpawn;
 
     public string gameOverSound = "GameOver";
 
@@ -59,6 +61,8 @@ public class GameMaster : MonoBehaviour {
     void Start()
     {
         _remainingLives = maxLives;
+
+        canSpawn = true;
 
         Money = startingMoney;
 
@@ -103,35 +107,51 @@ public class GameMaster : MonoBehaviour {
 
     public IEnumerator RespawnPlayer()
     {
+        canSpawn = false;
         yield return new WaitForSeconds(delay);
         audioManager.PlaySound(spawn);
         Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
         Transform clone = Instantiate(spawnPrefab, spawnPoint.position, spawnPoint.rotation) as Transform;
         Destroy(clone.gameObject, 3f);﻿
+        canSpawn = true;
     }
 
     public static void KillPlayer(Player player)
     {
-        gameMaster._KillPlayer(player);
+        Debug.Log("canSpawn: " + gameMaster.canSpawn);
+        if (gameMaster.canSpawn)
+        {
+            gameMaster.canSpawn = false;
+            gameMaster._KillPlayer(player);
+        }
+
+        return;
     }
 
     public void _KillPlayer(Player player)
     {
+        Destroy(player.gameObject);
         Transform clone = Instantiate(player.deathParticles, player.transform.position, Quaternion.identity);
         Destroy(clone.gameObject, 5f);
-        Destroy(player.gameObject);
         audioManager.PlaySound(player.grunt);
-        _remainingLives--;
+
+        if (_remainingLives != 0)
+            _remainingLives--;
+        else
+            _remainingLives = 0;
+        
         Debug.Log("Lives left: " + _remainingLives);
-        if (_remainingLives <= 0)
+
+        if (_remainingLives > 0)
         {
-            gameMaster.EndGame();
+            StartCoroutine(gameMaster.RespawnPlayer());
         }
         else
         {
-            gameMaster.StartCoroutine(gameMaster.RespawnPlayer());
+            blueUI.sprite = liveSprites[_remainingLives];
+            gameMaster.EndGame();
+            return;
         }
-
     }
 
     public static void KillEnemy(Enemy enemy)

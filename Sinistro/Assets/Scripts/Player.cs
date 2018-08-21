@@ -73,14 +73,18 @@ public class Player : MonoBehaviour {
     public void DamagePlayer(int damage)
     {
         stats.curHealth -= damage;
-        if(stats.curHealth > 0)
-            audioManager.PlaySound(playerHit);
-        
-        if(stats.curHealth <= 0)
+        if (stats.curHealth > 0)
         {
-            GameMaster.KillPlayer(this);
+            audioManager.PlaySound(playerHit);
+            statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
+            return;
         }
-        statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
+        else
+        {
+            statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
+            GameMaster.KillPlayer(this);
+            return;
+        }
     }
 
     private void OnDestroy()
