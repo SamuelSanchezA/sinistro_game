@@ -26,7 +26,9 @@ namespace UnitySampleAssets._2D
         private bool grounded = false; // Whether or not the player is grounded.
         private Transform ceilingCheck; // A position marking where to check for ceilings
         private float ceilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
-        private Animator anim; // Reference to the player's animator component.
+
+        [HideInInspector]
+        public Animator anim; // Reference to the player's animator component.
 
         private Transform playerGraphics;
 
@@ -137,6 +139,11 @@ namespace UnitySampleAssets._2D
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
+        }
+
+        public Animator GetAnimator()
+        {
+            return anim;
         }
     }
 }

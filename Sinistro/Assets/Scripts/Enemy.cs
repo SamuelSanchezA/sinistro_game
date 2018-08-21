@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 [RequireComponent(typeof(EnemyAI))]
@@ -90,6 +88,7 @@ public class Enemy : MonoBehaviour {
         if(player != null)
         {
             player.DamagePlayer(stats.damage);
+            player.DamagePlayerAnimation();
         }
     }
 
