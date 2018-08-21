@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour {
 
-    public int fireRate = 0;
+    public float fireRate = 0;
     public int Damage = 25;
     public LayerMask whatToHit;
 
@@ -17,6 +17,8 @@ public class Weapon : MonoBehaviour {
     public float camShakeAmt = 0.05f;
     public float camShakeLength = 0.1f;
     CameraShake cameraShake;
+
+    public static Weapon instance;
 
     public string weaponShootSound = "DefaultShot";
                                 
@@ -40,6 +42,11 @@ public class Weapon : MonoBehaviour {
         {
             Debug.LogError("No firepoint!!!!!!!!");
         }
+
+        if (instance == null)
+        {
+            instance = this;
+        }
 	}
 
     private void Start()
@@ -62,7 +69,7 @@ public class Weapon : MonoBehaviour {
     {
         if(fireRate == 0)
         {
-            if (Input.GetButton("Fire1"))
+            if (Input.GetButtonDown("Fire1"))
             {
                 Shoot();
             }
